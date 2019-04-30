@@ -17,6 +17,5 @@ deploy:
   bucket: "bridetool-website"
   local_dir: public
   skip_cleanup: true
-  acl: public_read
   on:
     branch: master
