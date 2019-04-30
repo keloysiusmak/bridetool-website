@@ -9,9 +9,13 @@ before_install:
   - export PATH=$PATH:$HOME/.local/bin
 install:
   - npm install
+  -
 deploy:
-  provider: script
   skip_cleanup: true
-  script: /bin/sh ./scripts/deploy.sh
+  provider: s3
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  bucket: "bridetool-website"
+  local_dir: public
   on:
     branch: master
