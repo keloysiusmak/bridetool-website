@@ -9,7 +9,7 @@ before_install:
   - export PATH=$PATH:$HOME/.local/bin
 install:
   - npm install
-  -
+  - gatsby build
 deploy:
   skip_cleanup: true
   provider: s3
